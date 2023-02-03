@@ -1,3 +1,18 @@
 <h2>Welcome to {{title}}</h2>
 <p>This is my first Angular app. I am excited to learn more about it  test.</p>
 <p>{{message}}</p>
+<button type="button" [disabled]="canClick" (click)="sayMessage()" >Trigger Alert Message</button>
+<p [id]="sayHelloId" [style.color]="fontColor">You can set my color in the component</p>
+<p>My color is {{ fontColor }}</p>
+
+<h2>Hello world: ngIf</h2>
+<button type="button" (click)="onEditClick()">Make text editable!</button>
+<div *ngIf="canEdit; else noEdit">
+  <p>You can edit the following paragraph</p>
+</div>
+
+<ng-template #noEdit>
+  <p>The following paragraph is ready only. Try clicking the button</p>
+</ng-template>
+
+<p [contentEditable]="canEdit">{{message3}}</p>
