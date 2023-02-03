@@ -14,6 +14,13 @@ export class AppComponent {
   message2 = 'Hello World';
   message3 = "I'm ready only";
   canEdit = false;
+  varObject = [
+    {name: 'Andrew 1'},
+    {name: 'Andrew 2'},
+    {name: 'Andrew 3'},
+    {name: 'Andrew 4'}
+  ];
+  displayMessage = "";
 
   onEditClick(){
     this.canEdit = !this.canEdit;
@@ -26,6 +33,15 @@ export class AppComponent {
 
   sayMessage() {
     alert(this.message2)
+  }
+
+  displayObject (){
+    let temp = "";
+    this.varObject.map((value) => {
+      temp += "," + value.name;
+    })
+    this.displayMessage = temp.replace(",","");
+    return temp;
   }
 
 }
